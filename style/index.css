@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    list-style: none;
+    font-family: 'Libre Franklin', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+main{
+    width: 100%;
+    max-width: 1536px;
+    margin: auto;
+    height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1576237934915-c716cf54b24d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+main::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: .8;
+}
+
+
+.header{
+    width: 380px;
+    height: 300px;
+    background-image: url(https://images.unsplash.com/photo-1535023909-6335ea9eb449?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header ul{
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+}
+
+
+h4{
+    display: inline-block;
+    font-size: 16px;
+    transition: transform .3s ease-in-out;
+}
+
+li{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: center;
+    border: 1px solid rgb(114, 204, 240);
+    border-bottom: 0;
+    background-color: rgba(65, 197, 195, 0.5);
+    transform-origin: bottom;
+    transition: transform .3s ease-in-out;
+    padding: 5px;
+}
+
+li:hover{
+    transform: scaleY(1.2);
+    background-color: rgba(175, 197, 65, 0.5);
+    border: 1px solid rgb(232, 240, 114);
+
+}
+
+li:hover h4{
+    transform: scaleY(.7);
+}
+
+.message{
+    position: absolute;
+    bottom: 100px;
+    width: 300px;
+    background-color: transparent;
+    letter-spacing: 3px;
+    line-height: 24px;
+}
+
+
+.type{
+    font-weight: bolder;
+    animation: typing 1.5s steps(30, end) ;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    display: inline-block;
+    color: rgb(248, 174, 70);
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+.blink{
+    color: rgb(248, 174, 70);
+    animation: blinker 1s step-end infinite;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0}
+    to { width: 150px }
+  }
+
+@media screen and (min-width: 640px) {  
+    /* sm */
+    .header{
+        width: 500px;
+        height: 350px;
+    }
+    li:hover{
+        transform: scaleY(1.3);
+    }
+
+    .message{
+        width: 450px;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    /* md */
+    .header{
+        width: 600px;
+        height: 350px;
+    }
+    li:hover{
+        transform: scaleY(1.3);
+    }
+
+    li{
+        padding: 7px;
+    }
+    .message{
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* /lg */
+    .header{
+        width: 750px;
+        height: 450px;
+    }
+
+    li{
+        padding: 9px;
+    }
+    li:hover{
+        transform: scaleY(1.4);
+    }
+
+    .message{
+        width: 600px;
+    }
+}
